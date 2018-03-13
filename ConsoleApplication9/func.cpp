@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 unsigned i, j;
 
 enum type_number { positive, negative, all };
