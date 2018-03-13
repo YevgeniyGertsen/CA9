@@ -142,6 +142,15 @@ void print_arr(int*arr, int r)
 	cout << endl;
 }
 
+void print_arr(float*arr, int r)
+{
+	for (i = 0; i < r; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
 void printMatrix(double(*a)[colCount], int r)
 {
 	for (i = 0; i < r; i++)
@@ -272,4 +281,44 @@ void twoInOne(int(*a)[colCount], int r, int *b)
 			b[j] += a[i][j];
 		}
 	}
+}
+int hFill(float* arr, int *r)
+{
+	/*cout << "¬ведите размер массива "; 
+	cin >> *r;
+	arr = (float*)calloc(*r, sizeof(float));*/
+
+	if (arr !=NULL)
+	{
+		for (int i = 0;i < *r;i++)
+		{
+			/*scanf("%lf", *m);*/
+			//printf("%d", i);
+			cin >> *arr;
+			arr++;
+		}
+		arr = arr - *r;
+		print_arr(arr, *r);
+		return 0;
+	}
+	else
+		return 1;
+	
+}
+int hFill(int* arr, int *r)
+{
+	
+	if (arr != NULL)
+	{
+		for (int i = 0;i < *r;i++)
+		{
+			cin >> *arr;
+			arr++;
+		}
+		arr = arr - *r;
+		print_arr(arr, *r);
+		return 0;
+	}
+	else
+		return 1;
 }

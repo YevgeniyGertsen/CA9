@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClCompile Include="func.cpp" />
     <ClCompile Include="Tasks.cpp" />
+    <ClCompile Include="TASKS1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyFuncr.h" />

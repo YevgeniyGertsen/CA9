@@ -16,6 +16,7 @@ void creatMatrix(int*a, int row, int coll);
 
 
 void print_arr(int*arr, int r);
+void print_arr(float*arr, int r);
 void printMatrix(double(*a)[colCount], int r);
 void printMatrix(int(*a)[colCount], int r);
 void printMatrix(int*a, int row, int coll);
@@ -29,6 +30,8 @@ int sum_ind(int(*a)[4], int r, int &col, int &row, int &max);
 double sr_arif(double(*a)[colCount], int r);
 void creatMatrix(int(*a)[colCount], int r, int start, int end, type_number tn);
 void twoInOne(int(*a)[colCount], int r, int *b);
+int hFill(float* arr, int *r);
+int hFill(int* arr, int *r);
 
 
 
