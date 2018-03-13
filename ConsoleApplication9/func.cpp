@@ -322,3 +322,24 @@ int hFill(int* arr, int *r)
 	else
 		return 1;
 }
+
+int copyS(char *arr, char *arr1, int r)
+{
+	//if (r > strlen(arr))
+	//{
+	//	r = strlen(arr);
+	//	strcpy(arr1, arr);
+	//	//arr = arr1;
+	//}
+	//else
+	/*{*/
+		for (int i = 0;i < r;i++)
+		{
+			*arr1 = *arr;
+			arr++;
+			arr1++;
+		}
+		*arr = '\0';
+	/*}*/
+	return 0;
+}
