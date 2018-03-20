@@ -33,8 +33,11 @@ void twoInOne(int(*a)[colCount], int r, int *b);
 int hFill(float* arr, int *r);
 int hFill(int* arr, int *r);
 int copyS(char *arr, char *arr1, int r);
-
-
+int MaxElement(int *mas, int lenght);
+void DifferentElements(int *mas, int lenght);
+void Meetings(int *mas, int lenght);
+char * GetMaxString(char * str, int * max);
+void SortByLetter(char * str);
 
 
 

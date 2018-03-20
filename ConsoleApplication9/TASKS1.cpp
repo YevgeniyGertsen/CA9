@@ -8,10 +8,21 @@ short int nz;
 
 int i, j;
 
-void main(int args, char* argv[])
+void main12(int args, char* argv[])
 {
 	srand(time(NULL));
 	setlocale(LC_ALL, ".1251");
+
+
+	int z[4][2] = { { 2,4 },{ 8,10 },{ 12,3 },{ 89,5 } };
+
+	printf("%d\n", *(z+1));
+	//printf("z = %p - z[0][0] = %p \n", &z, &z[0][0]);
+	//printf("z = %p - &z[0] = %p \n", &z, &z[0]);
+
+	return;
+
+
 
 	if (args != 0)
 	{

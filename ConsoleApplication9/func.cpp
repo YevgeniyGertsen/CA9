@@ -88,13 +88,10 @@ double numb(type_number tn, double start, int end)
 		break;
 	}
 }
-
 void creat(int*arr, int r, int start, int end, type_number tn)
 {
 	for (i = 0; i < r; i++)
-	{
 		arr[i] = numb(tn, start, end);
-	}
 }
 #define colCount 5
 void creatMatrix(int(*a)[colCount], int r, int start, int end, type_number tn)
@@ -114,7 +111,7 @@ void creatMatrix(int*a, int row, int coll)
 	{
 		for (j = 0; j < coll; j++)
 		{
-			*(a + i*coll + j)=1 + rand() %100;//обращение кэлементу 2-мерного массивв
+			*(a + i*coll + j) = 1 + rand() % 100;//обращение кэлементу 2-мерного массивв
 
 		}
 	}
@@ -181,7 +178,7 @@ void printMatrix(int*a, int row, int coll)
 	{
 		for (j = 0; j < coll; j++)
 		{
-			printf ("%d\t",*(a + i*coll + j));//обращение кэлементу 2-мерного массивв
+			printf("%d\t", *(a + i*coll + j));//обращение кэлементу 2-мерного массивв
 
 		}
 		printf("\n");
@@ -284,11 +281,11 @@ void twoInOne(int(*a)[colCount], int r, int *b)
 }
 int hFill(float* arr, int *r)
 {
-	/*cout << "Введите размер массива "; 
+	/*cout << "Введите размер массива ";
 	cin >> *r;
 	arr = (float*)calloc(*r, sizeof(float));*/
 
-	if (arr !=NULL)
+	if (arr != NULL)
 	{
 		for (int i = 0;i < *r;i++)
 		{
@@ -303,11 +300,11 @@ int hFill(float* arr, int *r)
 	}
 	else
 		return 1;
-	
+
 }
 int hFill(int* arr, int *r)
 {
-	
+
 	if (arr != NULL)
 	{
 		for (int i = 0;i < *r;i++)
@@ -333,13 +330,161 @@ int copyS(char *arr, char *arr1, int r)
 	//}
 	//else
 	/*{*/
-		for (int i = 0;i < r;i++)
-		{
-			*arr1 = *arr;
-			arr++;
-			arr1++;
-		}
-		*arr = '\0';
+	for (int i = 0;i < r;i++)
+	{
+		*arr1 = *arr;
+		arr++;
+		arr1++;
+	}
+	*arr = '\0';
 	/*}*/
 	return 0;
+}
+
+void f()
+{
+	int z[4][2] = { {2,4},{8,10},{12,3},{89,5} };
+
+	printf("z = %p - z[0][0] = %p", z, z[0][0]);
+
+
+}
+int MaxElement(int *mas, int lenght)
+{
+	int max = *mas;
+	for (short int i = 0; i < lenght; i++)
+	{
+		if (max < *(mas + i))
+			max = *(mas + i);
+	}
+	return max;
+}
+void DifferentElements(int *mas, int lenght)
+{
+	int counter = 0;
+	for (int i = 0; i < lenght; i++)
+		for (int j = 0; j < lenght; j++)
+			if (i != j)
+				if (*(mas + i) == *(mas + j))
+					counter++;
+	printf("Количество несхожих элементов = %d\n", lenght - counter);
+}
+
+int isExists(int *mas, int length, int key)
+{
+	for (int i = 0; i < length; i++)
+	{
+		if (key == *(mas + i*2+1))
+			return 1;
+	}
+	return 0;
+}
+
+void printMatrix2(int *mas, int row, int col)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			printf("%d\t", *(mas + i*col + j));
+		}
+		printf("\n");
+	}
+}
+
+void Meetings(int *mas, int length)
+{
+	int matrix[20][2];
+
+	for (int i = 0; i < length; i++)
+	{
+		/*if (isExists(&matrix[0][0], length, *(mas + i)) == 0)
+		{
+
+		}*/
+		matrix[i][0] = *(mas + i);
+		matrix[i][1] = 0;
+	}
+
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < length; j++)
+		{
+			if (matrix[i][0] == *(mas +j))
+				matrix[i][1]++;
+		}
+	}
+
+	printMatrix2(&matrix[0][0], 20, 2);
+
+	/*for (int i = 0; i < 20; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			printf("%d\t", matrix[i][j]);
+		}
+		printf("\n");
+	}*/
+}
+
+char * GetMaxString(char * str, int * max)
+{
+	int start = 0;
+	char * pt=NULL;
+
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (*(str) == ' ')
+		{
+			i--;
+
+			if (*max < (i - start))
+			{
+				*max = (i - start);
+				pt = str- (i - start)-1;
+			}				
+
+			i++;
+			start = i + 1;
+		}
+		str++;
+	}
+
+	return pt;
+}
+
+void SortByLetter(char * str)
+{
+	char splitStr[10][15];
+	int start = 0;
+	int j = 0;
+	for (int i = 0; i < strlen(str); i++)
+	{
+		if (*str == ' ')
+		{
+			str = str - (i - start) -1;
+
+			i--;	
+
+			for (int k = 0; k <= (i - start); k++)
+			{
+				splitStr[j][k] = *(str+k);
+			}
+			
+			j++;
+			i++;
+			start = i + 1;
+			str = str + start;
+		}
+		str++;
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 15; j++)
+		{
+			printf("%c", splitStr[i][j]);
+		}
+		printf("\n");
+	}
 }

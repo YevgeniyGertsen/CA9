@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="func.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="Tasks.cpp" />
     <ClCompile Include="TASKS1.cpp" />
   </ItemGroup>
